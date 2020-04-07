@@ -8,16 +8,16 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
   switch (data.periodType) {
     case 'weeks':
       periodInDays = period * 7;
-      unitPeriod = periodInDays / 3;
+      unitPeriod = Math.round(periodInDays / 3);
       infections = currentlyInfected * (2 ** unitPeriod);
       break;
     case 'months':
       periodInDays = period * 30;
-      unitPeriod = periodInDays / 3;
+      unitPeriod = Math.round(periodInDays / 3);
       infections = currentlyInfected * (2 ** unitPeriod);
       break;
     default:
-      unitPeriod = period / 3;
+      unitPeriod = Math.round(periodInDays / 3);
       infections = currentlyInfected * (2 ** unitPeriod);
       break;
   }
