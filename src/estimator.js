@@ -27,7 +27,7 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
 const covid19ImpactEstimator = ((data) => {
   const impact = {};
   const severeImpact = {};
-  let reportedCases = Big(data.reportedCases);
+  const reportedCases = Big(data.reportedCases);
   impact.currentlyInfected = reportedCases * Big(10);
   severeImpact.currentlyInfected = reportedCases * Big(50);
   const iCurrentlyInfected = Big(impact.currentlyInfected);
