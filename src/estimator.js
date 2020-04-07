@@ -24,6 +24,10 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
   return infections;
 };
 
+const severeCasesByRequestedTime = ((time) => {
+  Math.round(time * 0.15);
+}
+);
 const covid19ImpactEstimator = ((data) => {
   const impact = {};
   const severeImpact = {};
@@ -34,6 +38,9 @@ const covid19ImpactEstimator = ((data) => {
   impact.infectionsByRequestedTime = infectionsByRequestedTime(data, iCurrentlyInfected);
   const siCurrentlyInfected = Big(severeImpact.currentlyInfected);
   severeImpact.infectionsByRequestedTime = infectionsByRequestedTime(data, siCurrentlyInfected);
+  impact.severeCasesByRequestedTime = severeCasesByRequestedTime(impact.infectionsByRequestedTime);
+  const time = severeImpact.infectionsByRequestedTime;
+  severeImpact.severeCasesByRequestedTime = severeCasesByRequestedTime(time);
   return { data, impact, severeImpact };
 });
 
