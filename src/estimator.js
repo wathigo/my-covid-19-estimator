@@ -15,9 +15,9 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
       periodInDays = period * 30;
       unitPeriod = Math.round(periodInDays / 3);
       infections = currentlyInfected * (2 ** unitPeriod);
-      break;
+      break;      
     default:
-      unitPeriod = Math.round(periodInDays / 3);
+      unitPeriod = Math.round(period / 3);
       infections = currentlyInfected * (2 ** unitPeriod);
       break;
   }
