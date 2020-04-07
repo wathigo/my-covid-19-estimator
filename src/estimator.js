@@ -24,14 +24,12 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
   return infections;
 };
 
-const severeCasesByRequestedTime = ((time) => {
-  Math.round(time * 0.15);
-}
+const severeCasesByRequestedTime = ((time) => Math.round(time * 0.15)
 );
 
 const hospitalBedsByRequestedTime = (data, severeCases) => {
   const availableBeds = Math.floor(data.totalHospitalBeds * 0.35);
-  return severeCases - availableBeds;
+  return availableBeds - severeCases;
 };
 
 const covid19ImpactEstimator = ((data) => {
