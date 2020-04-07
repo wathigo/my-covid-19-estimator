@@ -1,6 +1,8 @@
+import Big from 'big.js';
+
 const infectionsByRequestedTime = (data, currentlyInfected) => {
   let infections = null;
-  const period = data.timeToElapse;
+  const period = Big(data.timeToElapse);
   let periodInDays;
   let unitPeriod;
   switch (data.periodType) {
@@ -25,11 +27,13 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
 const covid19ImpactEstimator = ((data) => {
   const impact = {};
   const severeImpact = {};
-  impact.currentlyInfected = data.reportedCases * 10;
-  severeImpact.currentlyInfected = data.reportedCases * 50;
-  impact.infectionsByRequestedTime = infectionsByRequestedTime(data, impact.currentlyInfected);
-  const { currentlyInfected } = severeImpact;
-  severeImpact.infectionsByRequestedTime = infectionsByRequestedTime(data, currentlyInfected);
+  reportedCases = Big(data.reportedCases);
+  impact.currentlyInfected = reportedCases * Big(10);
+  severeImpact.currentlyInfected = reportedCases * Big(50);
+  const iCurrentlyInfected = Big(impact.currentlyInfected);
+  impact.infectionsByRequestedTime = infectionsByRequestedTime(data,iCurrentlyInfected);
+  const siCurrentlyInfected = Big(severeImpact.currentlyInfected);
+  severeImpact.infectionsByRequestedTime = infectionsByRequestedTime(data, siCurrentlyInfected);
   return { data, impact, severeImpact };
 });
 
