@@ -1,14 +1,22 @@
 const infectionsByRequestedTime = (data, currentlyInfected) => {
   let infections = null;
+  const period = data.timeToElapse;
+  let periodInDays;
+  let unitPeriod;
   switch (data.periodType) {
     case 'weeks':
-      infections = currentlyInfected * (2 ** 70);
+      periodInDays = period * 7;
+      unitPeriod = periodInDays / 3;
+      infections = currentlyInfected * (2 ** unitPeriod);
       break;
     case 'months':
-      infections = currentlyInfected * (2 ** 300);
+      periodInDays = period * 30;
+      unitPeriod = periodInDays / 3;
+      infections = currentlyInfected * (2 ** unitPeriod);
       break;
     default:
-      infections = currentlyInfected * (2 ** 10);
+      unitPeriod = period / 3;
+      infections = currentlyInfected * (2 ** unitPeriod);
       break;
   }
   return infections;
