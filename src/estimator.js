@@ -28,7 +28,7 @@ const severeCasesByRequestedTime = ((time) => Math.round(time * 0.15)
 );
 
 const hospitalBedsByRequestedTime = (data, severeCases) => {
-  const availableBeds = Math.floor(data.totalHospitalBeds * 0.35);
+  const availableBeds = data.totalHospitalBeds * 0.35;
   return availableBeds - severeCases;
 };
 
