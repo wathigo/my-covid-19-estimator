@@ -31,7 +31,7 @@ const severeCasesByRequestedTime = ((time) => {
 
 const hospitalBedsByRequestedTime = (data, severeCases) => {
   const availableBeds = Math.floor(data.totalHospitalBeds * 0.35);
-  return availableBeds - severeCases;
+  return severeCases - availableBeds;
 };
 
 const covid19ImpactEstimator = ((data) => {
