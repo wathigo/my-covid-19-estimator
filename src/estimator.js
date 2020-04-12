@@ -27,10 +27,10 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
 const severeCasesByRequestedTime = ((time) => Math.round(time * 0.15)
 );
 
-const casesForICUByRequestedTime = ((time) =>  Math.round(time * 0.05)
+const casesForICUByRequestedTime = ((time) => Math.round(time * 0.05)
 );
 
-const casesForVentilatorsByRequestedTime = ((time) =>  Math.round(time * 0.02)
+const casesForVentilatorsByRequestedTime = ((time) => Math.round(time * 0.02)
 );
 
 const dollarsInFlight = (data, infections) => {
