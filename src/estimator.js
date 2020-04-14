@@ -30,7 +30,7 @@ const severeCasesByRequestedTime = ((time) => Math.floor(Big(time) * Big(0.15))
 const casesForICUByRequestedTime = ((time) => Math.floor(Big(time) * Big(0.05))
 );
 
-const casesForVentilatorsByRequestedTime = ((time) => Math.floor(Big(time) * Big(0.02)
+const casesForVentilatorsByRequestedTime = ((time) => Math.floor(Big(time) * Big(0.02))
 );
 
 const dollarsInFlight = (data, infections) => {
