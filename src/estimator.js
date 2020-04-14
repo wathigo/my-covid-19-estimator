@@ -24,13 +24,13 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
   return infections;
 };
 
-const severeCasesByRequestedTime = ((time) => Math.round(time * 0.15)
+const severeCasesByRequestedTime = ((time) => Math.floor(time * 0.15)
 );
 
-const casesForICUByRequestedTime = ((time) => Math.round(time * 0.05)
+const casesForICUByRequestedTime = ((time) => Math.floor(time * 0.05)
 );
 
-const casesForVentilatorsByRequestedTime = ((time) => Math.round(time * 0.02)
+const casesForVentilatorsByRequestedTime = ((time) => Math.floor(time * 0.02)
 );
 
 const dollarsInFlight = (data, infections) => {
