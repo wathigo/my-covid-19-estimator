@@ -24,7 +24,7 @@ const infectionsByRequestedTime = (data, currentlyInfected) => {
   return infections;
 };
 
-const severeCasesByRequestedTime = ((time) => Math.floor(time * 0.15)
+const severeCasesByRequestedTime = ((time) => Math.round(time * 0.15)
 );
 
 const casesForICUByRequestedTime = ((time) => Math.floor(time * 0.05)
@@ -56,8 +56,8 @@ const dollarsInFlight = (data, infections) => {
 };
 
 const hospitalBedsByRequestedTime = (data, severeCases) => {
-  const availableBeds = Math.floor(data.totalHospitalBeds * 0.35);
-  return availableBeds - severeCases + 1;
+  const availableBeds = Math.round(data.totalHospitalBeds * 0.35);
+  return availableBeds - severeCases;
 };
 
 const covid19ImpactEstimator = ((data) => {
