@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Covid-19 analytics System">
+    <meta name="google-site-verification" content="xrF0AdXdfB3n4IFyAHBg0EHC204r6rsgkcO21k_SsPI" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <h1>Covid-19 data analyzer<h1>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="data-input">
+                <form action="">
+                    <label for="population">Population</label>
+                    <input type="text" id="population" data-population>
+                    <label for="timeToElapse">Time to elapse</label>
+                    <input type="text" id="timeToElapse" data-time-to-elapse>
+                    <label for="reportedCases">Reported cases</label>
+                    <input type="text" id="reportedCases" data-reported-cases>
+                    <label for="totalHospitalBeds">Total hospital beds</label>
+                    <input type="text" id="totalHospitalBeds" data-total-hospital-beds>
+                    <label for="periodType">Period type</label>
+                    <select name="periodType" id="periodType" data-period-type>
+                        <option value="days">days</option>
+                        <option value="weeks">weeks</option>
+                        <option value="months">months</option>
+                    </select>
+                    <button data-go-estimate>Submit</button>
+                </form>
+            </div>
+            <div class="data-output"></div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.5))no-repeat,
+              url('images/bac.jpg') no-repeat;
+  background-size: cover;
+  background-color: #464646;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+nav {
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    height: 15vh;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    margin:  0 auto;
+}
+
+.data-input, .data-output {
+    display: inline-block;
+    width: 49%;
+    color: #ffffff;
+}
+
+.data-input form {
+    padding: 2em;
+}
+
+.data-input form input {
+    display: block;
+    width: 100%;
+    padding: 0.2em;
+}
+
+.data-input form label {
+    margin-top: 0.7em;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.data-input form label::after {
+    content: ':';
+}
+
+.data-input {
+    margin-right: 1.9%;
+}
+
+@media only screen and (max-width:610px) {
+    .data-input, .data-output {
+        display: block;
+        width: 100%;
+    }
+}
+
