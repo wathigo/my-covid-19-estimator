@@ -56,7 +56,7 @@ const dollarsInFlight = (data, infections) => {
 };
 
 const hospitalBedsByRequestedTime = (data, severeCases) => {
-  const availableBeds = Math.floor(data.totalHospitalBeds * 0.35);
+  const availableBeds = Math.round(data.totalHospitalBeds * 0.35);
   return availableBeds - severeCases;
 };
 
@@ -97,5 +97,10 @@ const covid19ImpactEstimator = ((data) => {
   severeImpact.dollarsInFlight = dollarsInFlight(data, infections);
   return { data, impact, severeImpact };
 });
+
+const handleSubmissions = (e => {
+  e.preventDefault();
+  
+})
 
 export default covid19ImpactEstimator;
