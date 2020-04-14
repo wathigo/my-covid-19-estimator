@@ -42,7 +42,17 @@ h2 {
 .data-input form input {
     display: block;
     width: 100%;
+    padding: 0.2em;
+}
+
+.data-input form label {
     margin-top: 0.7em;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.data-input form label::after {
+    content: ':';
 }
 
 .data-input {
