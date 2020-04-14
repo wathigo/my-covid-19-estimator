@@ -98,9 +98,4 @@ const covid19ImpactEstimator = ((data) => {
   return { data, impact, severeImpact };
 });
 
-const handleSubmissions = (e => {
-  e.preventDefault();
-  
-})
-
 export default covid19ImpactEstimator;
